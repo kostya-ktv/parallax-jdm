@@ -1,7 +1,7 @@
 import { classNames } from "../../helpers/classNames";
 import "./frame.style.css";
 
-type FrameContentType = "article" | "photo" | "video";
+type FrameContentType = "article" | "photo" | "video" | "custom";
 
 type FramePosition = "left" | "right";
 
@@ -13,6 +13,9 @@ interface IFrame {
 
   /* content type article*/
   title?: string;
+  titleCentered?: boolean;
+  titleBold?: boolean;
+  customContent?: React.ReactNode;
   description?: string;
 }
 
@@ -24,6 +27,9 @@ const Frame: React.FC<IFrame> = (props) => {
     position,
     source,
     title,
+    titleBold,
+    titleCentered,
+    customContent,
   } = props;
 
   return (
@@ -41,7 +47,14 @@ const Frame: React.FC<IFrame> = (props) => {
             "text-right": position === "right",
           })}
         >
-          <h3>{title}</h3>
+          <h3
+            className={classNames("", {
+              centered: titleCentered,
+              bold: titleBold,
+            })}
+          >
+            {title}
+          </h3>
           <p>{description}</p>
         </div>
       )}
@@ -76,6 +89,12 @@ const Frame: React.FC<IFrame> = (props) => {
             <source src={source} type="video/mp4" />
           </video>
         </div>
+      )}
+
+      {/* Custom */}
+
+      {frameContentType === "custom" && (
+        <div className="frame__content ">{customContent}</div>
       )}
     </div>
   );

@@ -6,12 +6,14 @@ import useScrollEngine from "./hooks/useScrollEngine";
 import Container from "./components/Container/Container";
 import Frame from "./components/Frame/Frame";
 import { Articles } from "./articles/acticles";
+import ContactMe from "./components/ContactMe/ContactMe";
+import JDM from "./components/JDM/JDM";
 
 function App() {
   useScrollEngine();
   return (
     <Container>
-      <Frame frameContentType="article" title="JDM World" />
+      <Frame frameContentType="custom" customContent={<JDM />} fadePreView />
 
       <Frame
         frameContentType="article"
@@ -47,7 +49,6 @@ function App() {
       <Frame fadePreView frameContentType="photo" source={thirdImg} />
 
       <Frame
-        fadePreView
         frameContentType="article"
         position="right"
         title={Articles["Unparalleled Driving Experience"].title}
@@ -55,12 +56,7 @@ function App() {
       />
 
       <Frame fadePreView frameContentType="video" source={secVid} />
-      <Frame
-        frameContentType="article"
-        fadePreView
-        title="Konstantin Kotov"
-        description="© 2023"
-      />
+      <Frame frameContentType="custom" customContent={<ContactMe />} />
     </Container>
   );
 }
