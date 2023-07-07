@@ -28,7 +28,7 @@ const useScrollEngine = () => {
       });
     };
     //some scroll on start
-    window.scrollTo(0, 50);
+    window.scrollTo(0, 10);
   }, []);
 };
 export default useScrollEngine;
