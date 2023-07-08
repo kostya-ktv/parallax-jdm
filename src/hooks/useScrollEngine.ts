@@ -1,7 +1,7 @@
-import { useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 
 const useScrollEngine = () => {
-  useLayoutEffect(() => {
+  useEffect(() => {
     let zSpacing = -4000;
     let lastPosition = zSpacing / 5;
 
