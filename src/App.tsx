@@ -14,8 +14,7 @@ function App() {
   const { isMobile } = useIsMobileDevice();
   useScrollEngine();
 
-  return (
-    <Container>
+  return isMobile ?<h2>Mobile devices are not supported yet</h2> : <Container>
       <Frame frameContentType="custom" customContent={<JDM />} fadePreView />
 
       <Frame
@@ -25,7 +24,7 @@ function App() {
         position="left"
       />
 
-      {/* <Frame frameContentType="video" source={firstVid} fadePreView /> */}
+      <Frame frameContentType="video" source={firstVid} fadePreView />
 
       <Frame
         fadePreView
@@ -58,10 +57,11 @@ function App() {
         description={Articles["Unparalleled Driving Experience"].description}
       />
 
-      {/* <Frame fadePreView frameContentType="video" source={secVid} /> */}
+      <Frame fadePreView frameContentType="video" source={secVid} />
       <Frame frameContentType="custom" customContent={<ContactMe />} />
     </Container>
-  );
+}
+  
 }
 
 export default App;
