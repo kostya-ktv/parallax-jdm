@@ -15,7 +15,7 @@ function App() {
   useScrollEngine();
 
   return isMobile ? (
-    <h2>Mobile devices are not supported yet</h2>
+    <h1>Mobile devices are not supported yet</h1>
   ) : (
     <Container>
       <Frame frameContentType="custom" customContent={<JDM />} fadePreView />
