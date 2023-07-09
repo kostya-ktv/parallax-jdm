@@ -8,8 +8,10 @@ import Frame from "./components/Frame/Frame";
 import { Articles } from "./articles/acticles";
 import ContactMe from "./components/ContactMe/ContactMe";
 import JDM from "./components/JDM/JDM";
+import useIsMobileDevice from "./hooks/useIsMobileDevice";
 
 function App() {
+  const { isMobile } = useIsMobileDevice();
   useScrollEngine();
 
   return (
@@ -23,7 +25,7 @@ function App() {
         position="left"
       />
 
-      {/* <Frame frameContentType="video" source={firstVid} fadePreView /> */}
+      <Frame frameContentType="video" source={firstVid} fadePreView />
 
       <Frame
         fadePreView
