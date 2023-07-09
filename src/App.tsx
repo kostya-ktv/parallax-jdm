@@ -25,7 +25,7 @@ function App() {
         position="left"
       />
 
-      <Frame frameContentType="video" source={firstVid} fadePreView />
+      {/* <Frame frameContentType="video" source={firstVid} fadePreView /> */}
 
       <Frame
         fadePreView
