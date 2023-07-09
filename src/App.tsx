@@ -8,9 +8,12 @@ import Frame from "./components/Frame/Frame";
 import { Articles } from "./articles/acticles";
 import ContactMe from "./components/ContactMe/ContactMe";
 import JDM from "./components/JDM/JDM";
+import useIsMobileDevice from "./hooks/useIsMobileDevice";
 
 function App() {
+  const { isMobile } = useIsMobileDevice();
   useScrollEngine();
+
   return (
     <Container>
       <Frame frameContentType="custom" customContent={<JDM />} fadePreView />
@@ -22,7 +25,9 @@ function App() {
         position="left"
       />
 
-      <Frame frameContentType="video" source={firstVid} fadePreView />
+      {!isMobile && (
+        <Frame frameContentType="video" source={firstVid} fadePreView />
+      )}
 
       <Frame
         fadePreView
