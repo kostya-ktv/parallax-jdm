@@ -11,6 +11,7 @@ import JDM from "./components/JDM/JDM";
 
 function App() {
   useScrollEngine();
+
   return (
     <Container>
       <Frame frameContentType="custom" customContent={<JDM />} fadePreView />
@@ -22,7 +23,7 @@ function App() {
         position="left"
       />
 
-      <Frame frameContentType="video" source={firstVid} fadePreView />
+      {/* <Frame frameContentType="video" source={firstVid} fadePreView /> */}
 
       <Frame
         fadePreView
@@ -55,7 +56,7 @@ function App() {
         description={Articles["Unparalleled Driving Experience"].description}
       />
 
-      <Frame fadePreView frameContentType="video" source={secVid} />
+      {/* <Frame fadePreView frameContentType="video" source={secVid} /> */}
       <Frame frameContentType="custom" customContent={<ContactMe />} />
     </Container>
   );
